@@ -16,6 +16,7 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const paths = require('./paths');
 const modules = require('./modules');
 const getClientEnvironment = require('./env');
@@ -753,6 +754,15 @@ module.exports = function (webpackEnv) {
             },
           },
         }),
+      new StyleLintPlugin({
+        configFile: '.stylelintrc.js',
+        files: 'src/**/*.{js,jsx,css}',
+        emitError: true,
+        emitWarning: true,
+        failOnError: false,
+        failOnWarning: false,
+        quiet: false
+      }),
     ].filter(Boolean),
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter

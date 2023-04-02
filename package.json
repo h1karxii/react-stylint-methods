@@ -44,11 +44,14 @@
     "jest-watch-typeahead": "^1.0.0",
     "lint-staged": "^13.2.0",
     "mini-css-extract-plugin": "^2.4.5",
-    "postcss": "^8.4.4",
+    "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-html": "^1.5.0",
     "postcss-loader": "^6.2.1",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^7.0.1",
+    "postcss-scss": "^4.0.6",
+    "postcss-styled-syntax": "^0.4.0",
     "prettier": "^2.8.7",
     "prompts": "^2.4.2",
     "react": "^18.2.0",
@@ -63,8 +66,20 @@
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.9",
+    "styled-normalize": "^8.0.7",
+    "stylelint": "^15.4.0",
+    "stylelint-config-css-modules": "^4.2.0",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-sass-guidelines": "^10.0.0",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^3.0.0",
+    "stylelint-scss": "^4.6.0",
+    "stylelint-webpack-plugin": "^4.1.0",
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
+    "typescript": "^5.0.3",
     "web-vitals": "^2.1.4",
     "webpack": "^5.64.4",
     "webpack-dev-server": "^4.6.0",
@@ -77,10 +92,12 @@
     "test": "node scripts/test.js",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "eslint": "eslint src/**/*.{js,jsx}"
+    "eslint": "eslint src/**/*.{js,jsx}",
+    "stylelint": "stylelint src/**/*.{js,jsx,css}"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": "eslint"
+    "src/**/*.{js,jsx}": "eslint",
+    "src/**/*.{js,jsx,css}": "stylelint"
   },
   "browserslist": {
     "production": [

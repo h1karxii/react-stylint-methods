@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import GlobalStyle from 'styles/globalStyles'
 import { ReactComponent as Logo } from 'assets/logo.svg'
 
 const Styles = styled.div`
@@ -11,7 +12,6 @@ const Styles = styled.div`
   font-size: calc(10px + 2vmin);
   color: #fff;
   text-align: center;
-  background-color: #282c34;
 
   .app__logo {
     height: 40vmin;
@@ -58,6 +58,7 @@ function App() {
 
   return (
     <Styles isClockwise={isClockwise}>
+      <GlobalStyle whiteColor={isClockwise} />
       <Logo className="app__logo app__logo--spin" alt="logo" />
       <p>
         Edit <code>src/App.js</code> and save to reload.
