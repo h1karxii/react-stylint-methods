@@ -1,0 +1,52 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: #fff;
+  text-align: center;
+  background-color: #282c34;
+
+  &__logo {
+    height: 40vmin;
+    pointer-events: none;
+
+    &--clockwise {
+      animation: clockwise infinite 20s linear;
+    }
+
+    &--counterclockwise {
+      animation: counterclockwise infinite 20s linear;
+    }
+  }
+
+  &__button {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #282c34;
+  }
+}
+
+@keyframes clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterclockwise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}

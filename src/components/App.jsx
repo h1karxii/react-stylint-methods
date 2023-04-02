@@ -1,23 +1,34 @@
-import logo from 'assets/logo.svg'
-import './App.css'
+import { useState } from 'react'
+import classNames from 'classnames/bind'
+import { ReactComponent as Logo } from 'assets/logo.svg'
+import styles from './App.module.scss'
+
+const cx = classNames.bind(styles)
 
 function App() {
+  const [isClockwise, setIsClockwise] = useState(true)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={cx('app')}>
+      <Logo
+        className={cx('app__logo', {
+          'app__logo--clockwise': isClockwise,
+          'app__logo--counterclockwise': !isClockwise,
+        })}
+        alt="logo"
+      />
+      <p>
+        Edit <code>src/App.js</code> and save to reload.
+      </p>
+      <button
+        type="button"
+        className={cx('app__button')}
+        onClick={() => {
+          setIsClockwise(!isClockwise)
+        }}
+      >
+        Turn around
+      </button>
     </div>
   )
 }
