@@ -1,0 +1,9 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "onlySnippets",
+  "emmet.extensionsPath": ["./.vscode"]
+}
